@@ -115,12 +115,14 @@ sub select_best_folder
   return reduce { choose_best_folder( $a, $b) } @folders;
 }
 
-my @CHOOSERS = (
+use vars qw/@CHOOSERS/; BEGIN {
+@CHOOSERS = (
   sub { $_ ne "Удалённые" },
   sub { $_ ne "Deleted Items" },
   sub { $_ ne "Входящие" },
   sub { $_ ne "Inbox" }
 );
+}
 
 use vars qw/%FOLDERS_PREFERENCE/; BEGIN {
 
