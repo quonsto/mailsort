@@ -143,7 +143,7 @@ sub choose_best_folder
   my @not_all_folders_preferenced = grep { not exists $FOLDERS_PREFERENCE{$_} } @folders;
   if ( @not_all_folders_preferenced )
   {
-    die "Cannot make preference between folders '$folders[0]' and '$folders[1]' @not_all_folders_preferenced";
+    die "Cannot make preference between folders '$folders[0]' and '$folders[1]'";
   }
   my @sorted_by_preference = sort { $FOLDERS_PREFERENCE{$a} <=> $FOLDERS_PREFERENCE{$b} } @folders;
   return $sorted_by_preference[0];
