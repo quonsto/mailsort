@@ -127,6 +127,7 @@ use vars qw/@CHOOSERS/; BEGIN {
 use vars qw/%FOLDERS_PREFERENCE/; BEGIN {
 
 %FOLDERS_PREFERENCE = (
+  "Personal/People" => 500,
   "Deleted Items до разделения папок" => 1000,
   "Deleted Items/! Deleted Items до разделения папок" => 2000,
 );
