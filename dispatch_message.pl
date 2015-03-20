@@ -30,7 +30,72 @@ sub choose_best_message_file( $ $ )
   my $notthesame = system "compare_messages.sh", @_;
   die "diff failed: $!" if $notthesame == -1;
   die "files @{[join ' and ', @_]} differ" if $notthesame;
-  return $_[0];
+  my $chosen = eval {
+    my $chosen = stdout_of( "choose_best_message.sh", $_[0], $_[1]);
+    die "Empty output from choose_best_message.sh '$_[0]' '$_[1]'" unless $chosen;
+    $chosen;
+  };
+  if ( defined $chosen )
+  {
+    chomp $chosen;
+    return $chosen;
+  };
+  die "failed to choose best message: $@";
+}
+
+use IPC::Open3;
+use Symbol 'gensym';
+use IO::Select;
+
+sub stdout_of 
+{
+  my @program_and_args = @_;
+  my ( $stdin, $stdout, $stderr ) = ( undef, undef, gensym() );
+  my $pid = open3( $stdin, $stdout, $stderr, @program_and_args);
+  my $select = IO::Select->new();
+  $select->add( $stdout, $stderr);
+  my ( $out, $err ) = map "", 0..1;
+  while ( my @ready = $select->can_read )
+  {
+    foreach my $fh ( @ready )
+    {
+      my $line;
+      my $len = sysread $fh, $line, 4096;
+      if ( not defined $len ) 
+      {
+        die "Error from child: $!\n";
+      } 
+      elsif ( $len == 0 )
+      {
+        # Finished reading from this FH because we read
+        # 0 bytes.  Remove this handle from $sel.  
+        # we will exit the loop once we remove all file
+        # handles ($outfh and $errfh).
+        $select->remove( $fh);
+        next;
+      } 
+      else 
+      { 
+        # we read data alright
+        if ( $fh == $stdout ) 
+        {
+          $out .= $line;
+        } 
+        elsif ( $fh == $stderr ) 
+        {
+          $err .= $line;
+        } 
+        else 
+        {
+          die "Shouldn't be here\n";
+        }
+      }
+    }
+  }
+  waitpid $pid, 0;
+  my $exit_status = $? >> 8;
+  die( $err or "child failed") if $exit_status;
+  return $out;
 }
 
 sub extract_folder
