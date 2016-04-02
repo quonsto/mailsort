@@ -150,9 +150,13 @@ use vars qw/%FOLDERS_PREFERENCE/; BEGIN {
   "Personal/People/Машка" => 499,
   "Personal/People/Masha" => 500,
   "Personal/People" => 501,
+  "Personal Stuff/CityCat" => 599,
+  "Personal/Information/Sciences/Computer Sciences" => 600,
   "Personal/Fun" => 750,
   "Inbox/! Inbox до разделения папок" => 999,
-  "Deleted Items до разделения папок" => 1000,
+  "Inbox/Spam/Old" => 1000,
+  "Входящие/Spam/Old" => 1000,
+  "Deleted Items до разделения папок" => 1500,
   "Deleted Items/! Deleted Items до разделения папок" => 2000,
 );
 
