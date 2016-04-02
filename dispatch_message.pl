@@ -156,7 +156,9 @@ use vars qw/%FOLDERS_PREFERENCE/; BEGIN {
   "Personal/Fun" => 750,
   "Inbox/! Inbox до разделения папок" => 999,
   "Inbox/Spam/Old" => 1000,
-  "Входящие/Spam/Old" => 1000,
+  "Inbox/Spam reports" => 1000,
+  "Входящие/Spam reports" => 1001,
+  "Входящие/Spam/Old" => 1001,
   "Deleted Items до разделения папок" => 1500,
   "Deleted Items/! Deleted Items до разделения папок" => 2000,
 );
