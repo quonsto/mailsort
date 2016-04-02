@@ -21,4 +21,6 @@ diff -uw \
     -I '^List-Unsubscribe: ' \
     -I '^x-original-to: ' \
     -I '^Thread-Index: ' \
+    -I '^x-antivirus-wms: ' \
+    -I '^x-antivirus-wms-mail-from: ' \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
