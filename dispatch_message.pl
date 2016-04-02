@@ -1,6 +1,7 @@
 #!/usr/bin/env -S perl -w
 
 use strict;
+use File::Basename;
 use List::Util qw/reduce/;
 
 sub uniq;
@@ -16,8 +17,24 @@ my $best_folder = select_best_folder( @folders);
 
 @files = grep { $_ ne $best_file } @files;
 
-print sprintf "%s => %s\n", $best_file, "../result/$best_folder";
-print sprintf "%s => X\n", $_ foreach @files;
+move_file( $best_file, "../result/$best_folder");
+delete_file( $_) foreach @files;
+
+sub move_file( $ $ )
+{
+  my ( $from, $to ) = @_;
+  my $fname = basename( $from);
+  print sprintf "%s => %s\n", $from, $to;
+  mkdir $to;
+  rename $from, "$to/$fname" or die "rename $from to $to/$fname: $!";
+}
+
+sub delete_file( $ )
+{
+  my ( $file ) = @_;
+  print sprintf "%s => X\n", $file;
+  unlink $file or die "unlink: $file: $!";
+}
 
 sub select_best_message_file
 {
