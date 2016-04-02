@@ -12,4 +12,5 @@ diff -uw \
     -I '^.*----=_NextPart_' \
     -I '^x-felis-deliver-id: ' \
     -I '^x-sender: ' \
+    -I '^x-spam-status: ' \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
