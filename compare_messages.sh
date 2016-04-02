@@ -11,4 +11,5 @@ diff -uw \
     -I '^Return-Path:' \
     -I '^.*----=_NextPart_' \
     -I '^x-felis-deliver-id:' \
+    -I '^x-sender:' \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
