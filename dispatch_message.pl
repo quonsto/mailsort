@@ -140,7 +140,8 @@ use vars qw/@CHOOSERS/; BEGIN {
   sub { $_ ne "Удаленные" },
   sub { $_ ne "Deleted Items" },
   sub { $_ ne "Входящие" },
-  sub { $_ ne "Inbox" }
+  sub { $_ ne "Inbox" },
+  sub { $_ !~ /IPM_SUBTREE/ }
 );
 }
 
