@@ -2,12 +2,15 @@
 
 use strict;
 use File::Basename;
+use File::Path qw/make_path/;
 use List::Util qw/reduce/;
 
 sub uniq;
 sub extract_folder;
 sub choose_best_message_file;
 sub choose_best_folder;
+sub move_file( $ $ );
+sub delete_file( $ );
 
 my @files = map { chomp; $_ } readline;
 my @folders = uniq map { extract_folder } @files;
@@ -25,7 +28,7 @@ sub move_file( $ $ )
   my ( $from, $to ) = @_;
   my $fname = basename( $from);
   print sprintf "%s => %s\n", $from, $to;
-  mkdir $to;
+  make_path $to;
   rename $from, "$to/$fname" or die "rename $from to $to/$fname: $!";
 }
 
@@ -145,6 +148,7 @@ use vars qw/%FOLDERS_PREFERENCE/; BEGIN {
 
 %FOLDERS_PREFERENCE = (
   "Personal/People" => 500,
+  "Personal/Fun" => 750,
   "Deleted Items до разделения папок" => 1000,
   "Deleted Items/! Deleted Items до разделения папок" => 2000,
 );
