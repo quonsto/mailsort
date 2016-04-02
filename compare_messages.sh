@@ -16,4 +16,9 @@ diff -uw \
     -I '^x-recipient: ' \
     -I '^x-spamcheck: ' \
     -I '^x-spam-level: ' \
+    -I '^List-Help: ' \
+    -I '^List-Subscribe: ' \
+    -I '^List-Unsubscribe: ' \
+    -I '^x-original-to: ' \
+    -I '^Thread-Index: ' \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
