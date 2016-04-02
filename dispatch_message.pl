@@ -137,7 +137,7 @@ sub select_best_folder
 
 use vars qw/@CHOOSERS/; BEGIN {
 @CHOOSERS = (
-  sub { $_ ne "Удалённые" },
+  sub { $_ ne "Удаленные" },
   sub { $_ ne "Deleted Items" },
   sub { $_ ne "Входящие" },
   sub { $_ ne "Inbox" }
