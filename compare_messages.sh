@@ -13,4 +13,7 @@ diff -uw \
     -I '^x-felis-deliver-id: ' \
     -I '^x-sender: ' \
     -I '^x-spam-status: ' \
+    -I '^x-recipient: ' \
+    -I '^x-spamcheck: ' \
+    -I '^x-spam-level: ' \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
