@@ -11,6 +11,7 @@ sub choose_best_message_file;
 sub choose_best_folder;
 sub move_file( $ $ );
 sub delete_file( $ );
+sub not_a_misrosoft( $ );
 
 my @files = map { chomp; $_ } readline;
 my @folders = uniq map { extract_folder } @files;
@@ -47,12 +48,15 @@ sub select_best_message_file
 
 sub choose_best_message_file( $ $ )
 {
-  my $notthesame = system "compare_messages.sh", @_;
+  my @filenames = @_;
+  my @wo_microsoft = grep { not_a_microsoft( $_) } @filenames;
+  return $wo_microsoft[0] if @wo_microsoft == 1;
+  my $notthesame = system "compare_messages.sh", @filenames;
   die "diff failed: $!" if $notthesame == -1;
-  die "files @{[join ' and ', @_]} differ" if $notthesame;
+  die "files @{[join ' and ', @filenames]} differ" if $notthesame;
   my $chosen = eval {
-    my $chosen = stdout_of( "choose_best_message.sh", $_[0], $_[1]);
-    die "Empty output from choose_best_message.sh '$_[0]' '$_[1]'" unless $chosen;
+    my $chosen = stdout_of( "choose_best_message.sh", $filenames[0], $filenames[1]);
+    die "Empty output from choose_best_message.sh '$filenames[0]' '$filenames[1]'" unless $chosen;
     $chosen;
   };
   if ( defined $chosen )
@@ -61,6 +65,17 @@ sub choose_best_message_file( $ $ )
     return $chosen;
   };
   die "failed to choose best message: $@";
+}
+
+sub not_a_microsoft( $ )
+{
+  my ( $filename ) = @_;
+  open( my $fh, '<', $filename) or die "open: '$filename': $!";
+  while (my $line = <$fh>)
+  {
+    return 0 if $line =~ /^X-MS-TNEF-Correlator: /;
+  }
+  return 1;
 }
 
 use IPC::Open3;
