@@ -141,7 +141,8 @@ use vars qw/@CHOOSERS/; BEGIN {
   sub { $_ ne "Deleted Items" },
   sub { $_ ne "Входящие" },
   sub { $_ ne "Inbox" },
-  sub { $_ !~ /IPM_SUBTREE/ }
+  sub { $_ !~ /IPM_SUBTREE/ },
+  sub { $_ !~ /^Sent Items\/?/ }
 );
 }
 
