@@ -12,6 +12,7 @@ sub choose_best_folder;
 sub move_file( $ $ );
 sub delete_file( $ );
 sub not_a_misrosoft( $ );
+sub choose_by_complex( $ $ );
 
 my @files = map { chomp; $_ } readline;
 my @folders = uniq map { extract_folder } @files;
@@ -214,7 +215,26 @@ sub choose_best_folder
   { return $folder1 }
   if ( exists $IS_BETTER_THAN{$folder2}{$folder1} )
   { return $folder2 }
+  my $chosen_by_complex = choose_by_complex( $folder1, $folder2);
+  return $chosen_by_complex if $chosen_by_complex;
   die "Cannot make preference between folders '$folder1' and '$folder2'";
+}
+
+sub substitute( $ $ $ )
+{
+  my ( $find, $substitute, $string ) = @_;
+  $string =~ s/$find/$substitute/g;
+  return $string;
+}
+
+sub choose_by_complex( $ $ )
+{
+  my ( $folder1, $folder2 ) = @_;
+  if ( substitute( '^Входящие', 'Inbox', $folder1) eq $folder2 )
+  { return $folder2 }
+  if ( substitute( '^Входящие', 'Inbox', $folder2) eq $folder1 )
+  { return $folder1 }
+  return 0;
 }
 
 sub uniq
