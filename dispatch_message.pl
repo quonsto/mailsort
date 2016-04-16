@@ -170,6 +170,9 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
 %IS_BETTER_THAN = (
   "Professional/Work/Archive/Telecom-Centre/Maintenance/САСП/Распоряжения и заявки" => {
     "Переписка с клиентами" => 1
+  },
+  "Professional/Work/Archive/Telecom-Centre/Significant &- Important" => {
+    "Significant &- Important" => 1
   }
 );
 
