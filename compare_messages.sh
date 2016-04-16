@@ -23,4 +23,6 @@ diff -uw \
     -I '^Thread-Index: ' \
     -I '^x-antivirus-wms: ' \
     -I '^x-antivirus-wms-mail-from: ' \
+    -I '^X-MS-TNEF-Correlator: ' \
+    -I '^eJ8+I...AQaQCAAEAAAAAAABAAEAAQeQBgAIAAAA4wQAAAAAAADnAAEIgAcAGAAAAElQTS5NaWNy' \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
