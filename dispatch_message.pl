@@ -165,6 +165,16 @@ use vars qw/%FOLDERS_PREFERENCE/; BEGIN {
 
 }
 
+use vars qw/%IS_BETTER_THAN/; BEGIN {
+
+%IS_BETTER_THAN = (
+  "Professional/Work/Archive/Telecom-Centre/Maintenance/САСП/Распоряжения и заявки" => {
+    "Переписка с клиентами" => 1
+  }
+);
+
+}
+
 sub choose_best_folder
 {
   my @folders = @_;
@@ -175,12 +185,17 @@ sub choose_best_folder
 #    @folders = @filtered unless @filtered == 0;
   }
   my @not_all_folders_preferenced = grep { not exists $FOLDERS_PREFERENCE{$_} } @folders;
-  if ( @not_all_folders_preferenced )
+  if ( not @not_all_folders_preferenced )
   {
-    die "Cannot make preference between folders '$folders[0]' and '$folders[1]'";
+    my @sorted_by_preference = sort { $FOLDERS_PREFERENCE{$a} <=> $FOLDERS_PREFERENCE{$b} } @folders;
+    return $sorted_by_preference[0];
   }
-  my @sorted_by_preference = sort { $FOLDERS_PREFERENCE{$a} <=> $FOLDERS_PREFERENCE{$b} } @folders;
-  return $sorted_by_preference[0];
+  my ( $folder1, $folder2 ) = @folders;
+  if ( exists $IS_BETTER_THAN{$folder1}{$folder2} )
+  { return $folder1 }
+  if ( exists $IS_BETTER_THAN{$folder2}{$folder1} )
+  { return $folder2 }
+  die "Cannot make preference between folders '$folder1' and '$folder2'";
 }
 
 sub uniq
