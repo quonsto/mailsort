@@ -25,8 +25,13 @@ diff -uw \
     -I '^x-antivirus-wms-mail-from: ' \
     -I '^[Xx]-[Vv]irus-[Ss]canned: ' \
     -I '^x-virus-status: ' \
+    -I '^x-cron-env: ' \
     -I '^x-authentication-warning: ' \
     -I '^x-scanned-by: ' \
+    -I '^x-mime-autoconverted: ' \
+    -I '^x-sku-spf-passed: ' \
+    -I '^x-mdaemon-deliver-to: ' \
+    -I '^x-wlist-pattern: ' \
     -I '^X-MS-TNEF-Correlator: ' \
     -I '^eJ8+I...AQaQCAAEAAAAAAABAAEAAQeQBgAIAAAA4wQAAAAAAADnAAEIgAcA..AAAElQTS5.....' \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
