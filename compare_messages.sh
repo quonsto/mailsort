@@ -34,7 +34,11 @@ diff -uw \
     -I '^x-wlist-pattern: ' \
     -I '^Content-Language: ' \
     -I '^x-spampal-timeout: ' \
+    -I '^x-dspam-confidence: ' \
+    -I '^x-dspam-signature: ' \
     -I '^x-source-ip: ' \
+    -I '^x-originating-ip: ' \
+    -I '^Importance: ' \
     -I '^X-MS-TNEF-Correlator: ' \
     -I '^eJ8+I...AQaQCAAEAAAAAAABAAEAAQeQBgAIAAAA4wQAAAAAAADnAAEIgAcA..AAAElQTS5.....' \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
