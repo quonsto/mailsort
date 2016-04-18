@@ -39,6 +39,8 @@ diff -uw \
     -I '^x-source-ip: ' \
     -I '^x-originating-ip: ' \
     -I '^Importance: ' \
+    -I '^X-Priority: ' \
+    -I '^X-MSMail-Priority: ' \
     -I '^X-MS-TNEF-Correlator: ' \
     -I '^eJ8+I...AQaQCAAEAAAAAAABAAEAAQeQBgAIAAAA4wQAAAAAAADnAAEIgAcA..AAAElQTS5.....' \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
