@@ -172,6 +172,7 @@ use vars qw/%FOLDERS_PREFERENCE/; BEGIN {
   "Personal/Information/Sciences/Computer Sciences" => 600,
   "Personal/Fun" => 750,
   "Inbox/! Inbox до разделения папок" => 999,
+  "Inbox/Spam/ManuallyIdentidied" => 1000,
   "Inbox/Spam/Old" => 1000,
   "Inbox/Spam reports" => 1000,
   "Входящие/Spam reports" => 1001,
