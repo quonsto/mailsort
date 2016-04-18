@@ -193,7 +193,20 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
     "Significant &- Important" => 1
   },
   "Inbox/! Inbox до разделения папок" => {
-    "Inbox/In-Out-Boxes" => 1
+    "Inbox/In-Out-Boxes" => 1,
+    "Входящие/Sort Old" => 1
+  },
+  "Personal/People/Baranovsky" => {
+    "Personal Stuff/Baranovsky" => 1
+  },
+  "Professional/Work/Archive/Telecom-Centre/Development/KIS" => {
+    "Projects/KIS" => 1
+  },
+  "Входящие/SPF/WillPass" => {
+    "Inbox/Спам!" => 1
+  },
+  "Входящие/Sort Old" => {
+    "Отправленные" => 1
   }
 );
 
