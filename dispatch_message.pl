@@ -208,6 +208,12 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   },
   "Входящие/Sort Old" => {
     "Отправленные" => 1
+  },
+  "Queue/1 In work/Tasks/3 Important/Security Updates" => {
+    "Queue/1 In work/Tasks/2 Urgent" => 1
+  },
+  "Deleted Items/! Deleted Items до разделения папок" => {
+    "Удаленные" => 1
   }
 );
 
