@@ -12,5 +12,11 @@ decode_message.pl "$1" |
        /^\s+filename="winmail.dat"$/ and $tnef_mode = 1;
    ' | 
    perl -ne '
-       print unless eof() and /^$/;
+       if ( /^$/ ) {
+         $buffer .= $_;
+       } else {
+         print $buffer;
+         $buffer = "";
+         print;
+       }
    '
