@@ -258,6 +258,14 @@ sub choose_by_complex( $ $ )
   { return $folder2 }
   if ( substitute( '^Входящие', 'Inbox', $folder2) eq $folder1 )
   { return $folder1 }
+  if ( substitute( '^Personal Stuff/', 'Personal/People/', $folder1) eq $folder2 )
+  { return $folder2 }
+  if ( substitute( '^Personal Stuff/', 'Personal/People/', $folder2) eq $folder1 )
+  { return $folder1 }
+  if ( substitute( '^', 'Professional/Work/Archive/Telecom-Centre/', $folder1) eq $folder2 )
+  { return $folder2 }
+  if ( substitute( '^', 'Professional/Work/Archive/Telecom-Centre/', $folder2) eq $folder1 )
+  { return $folder1 }
   return 0;
 }
 
