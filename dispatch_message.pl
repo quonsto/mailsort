@@ -74,7 +74,7 @@ sub not_a_microsoft( $ )
   open( my $fh, '<', $filename) or die "open: '$filename': $!";
   while (my $line = <$fh>)
   {
-    return 0 if $line =~ /^X-MS-TNEF-Correlator: /;
+    return 0 if $line =~ m'^Content-Type: application/ms-tnef;';
   }
   return 1;
 }
