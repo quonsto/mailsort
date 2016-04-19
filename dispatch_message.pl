@@ -251,21 +251,26 @@ sub substitute( $ $ $ )
   return $string;
 }
 
+use vars qw/@ESTIMATING_SUBSTITUTIONS/; BEGIN { @ESTIMATING_SUBSTITUTIONS = (
+
+  [ '^Входящие', 'Inbox' ],
+  [ '^Personal Stuff/', 'Personal/People/' ],
+  [ '^', 'Professional/Work/Archive/Telecom-Centre/' ],
+  [ '^Projects/', 'Professional/Work/Archive/Telecom-Centre/Development/' ]
+
+) }
+  
+
 sub choose_by_complex( $ $ )
 {
   my ( $folder1, $folder2 ) = @_;
-  if ( substitute( '^Входящие', 'Inbox', $folder1) eq $folder2 )
-  { return $folder2 }
-  if ( substitute( '^Входящие', 'Inbox', $folder2) eq $folder1 )
-  { return $folder1 }
-  if ( substitute( '^Personal Stuff/', 'Personal/People/', $folder1) eq $folder2 )
-  { return $folder2 }
-  if ( substitute( '^Personal Stuff/', 'Personal/People/', $folder2) eq $folder1 )
-  { return $folder1 }
-  if ( substitute( '^', 'Professional/Work/Archive/Telecom-Centre/', $folder1) eq $folder2 )
-  { return $folder2 }
-  if ( substitute( '^', 'Professional/Work/Archive/Telecom-Centre/', $folder2) eq $folder1 )
-  { return $folder1 }
+  foreach my $estimating_substitution ( @ESTIMATING_SUBSTITUTIONS ) {
+    my ( $substitute, $replacement ) = @$estimating_substitution;
+    if ( substitute( $substitute, $replacement, $folder1) eq $folder2 )
+    { return $folder2 }
+    if ( substitute( $substitute, $replacement, $folder2) eq $folder1 )
+    { return $folder1 }
+  }
   return 0;
 }
 
