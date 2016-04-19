@@ -11,6 +11,7 @@ diff -uw \
     -I '^Return-Path: ' \
     -I '^.*----=_NextPart_' \
     -I '^x-felis-deliver-id: ' \
+    -I '^x-felis-queue-id: ' \
     -I '^x-sender: ' \
     -I '^x-spam-status: ' \
     -I '^x-recipient: ' \
@@ -29,6 +30,8 @@ diff -uw \
     -I '^x-authentication-warning: ' \
     -I '^x-scanned-by: ' \
     -I '^x-mime-autoconverted: ' \
+    -I '^x-mimetrack: ' \
+    -I '^x-sieve: ' \
     -I '^x-sku-spf-passed: ' \
     -I '^x-mdaemon-deliver-to: ' \
     -I '^x-wlist-pattern: ' \
