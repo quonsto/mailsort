@@ -292,6 +292,8 @@ sub choose_best_folder
   { return $folder2 }
   my $chosen_by_complex = choose_by_complex( $folder1, $folder2);
   return $chosen_by_complex if $chosen_by_complex;
+  my $chosen_by_substring = choose_by_substringing( $folder1, $folder2);
+  return $chosen_by_substring if $chosen_by_substring;
   die "Cannot make preference between folders '$folder1' and '$folder2'";
 }
 
@@ -324,6 +326,16 @@ sub choose_by_complex( $ $ )
     { return $folder1 }
   }
   return 0;
+}
+
+sub choose_by_substringing( $ $ )
+{
+  my ( $folder1, $folder2 ) = @_;
+  if ( substr( $folder1, 0, length( $folder2)) eq $folder2 )
+  { return $folder1 }
+  if ( substr( $folder2, 0, length( $folder1)) eq $folder1 )
+  { return $folder2 }
+  return "";
 }
 
 sub uniq
