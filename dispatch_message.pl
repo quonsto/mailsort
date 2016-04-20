@@ -228,7 +228,40 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   },
   "Deleted Items/! Deleted Items до разделения папок" => {
     "Удаленные" => 1
-  }
+  },
+  "Personal/People/Машка" => {
+    "Personal/History" => 1
+  },
+  "Deleted Items до разделения папок" => {
+    "Входящие/Sort Old" => 1
+  },
+  "Professional/Information/Useful links" => {
+    "Personal Stuff" => 1
+  },
+  "Входящие/Спам? (Помечено SPF)" => {
+    "Inbox/Спам! (Помечено SPF-ом)" => 1
+  },
+  "Professional/Work/WMS" => {
+    "Входящие/Billing" => 1
+  },
+  "Personal/People/Sanych" => {
+    "Personal/People/Саныч" => 1
+  },
+  "Personal/Personal/Accounts" => {
+    "Inbox/Spam/Old" => 1
+  },
+  "Входящие/Отпуск" => {
+    "Deleted Items/! Deleted Items до разделения папок" => 1
+  },
+  "Входящие/Отпуск - старое" => {
+    "Входящие/Отпуск" => 1
+  },
+  "Personal/Hobby/Racing" => {
+    "Personal/Hobby/F1" => 1
+  },
+  "Personal/Study/Aspirant" => {
+    "Personal Stuff" => 1
+  },
 );
 
 }
