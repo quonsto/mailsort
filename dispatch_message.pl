@@ -153,14 +153,14 @@ sub select_best_folder
 
 use vars qw/@CHOOSERS/; BEGIN {
 @CHOOSERS = (
+  sub { $_ !~ /IPM_SUBTREE/ },
   sub { $_ !~ "^Удаленные/" },
   sub { $_ ne "Удаленные" },
   sub { $_ ne "Deleted Items" },
   sub { $_ ne "Отправленные" },
+  sub { $_ !~ /^Sent Items\/?/ },
   sub { $_ ne "Входящие" },
   sub { $_ ne "Inbox" },
-  sub { $_ !~ /IPM_SUBTREE/ },
-  sub { $_ !~ /^Sent Items\/?/ }
 );
 }
 
