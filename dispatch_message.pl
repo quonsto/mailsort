@@ -252,7 +252,8 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
     "Personal/People/Саныч" => 1
   },
   "Personal/Personal/Accounts" => {
-    "Inbox/Spam/Old" => 1
+    "Inbox/Spam/Old" => 1,
+    "Входящие/Personal" => 1,
   },
   "Входящие/Отпуск" => {
     "Deleted Items/! Deleted Items до разделения папок" => 1
@@ -265,6 +266,16 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   },
   "Personal/Study/Aspirant" => {
     "Personal Stuff" => 1
+  },
+  "Inbox/Спам! (Помечено SPF-ом)/Не пометилось" => {
+    "Входящие/SPF/Unfiltered-3" => 1
+  },
+  "Professional/Information/Network Tech/IP Technologies" => {
+    "Personal Stuff/CityCat" => 1
+  },
+  "Professional/Work/Archive/Telecom-Centre/Maintenance/САСП/Распоряжения и заявки" => {
+    "Professional/Work/Archive/Telecom-Centre/Распоряжения" => 1,
+    "Распоряжения" => 1,
   },
 );
 
