@@ -278,8 +278,12 @@ sub choose_best_folder
   my @not_all_folders_preferenced = grep { not exists $FOLDERS_PREFERENCE{$_} } @folders;
   if ( not @not_all_folders_preferenced )
   {
-    my @sorted_by_preference = sort { $FOLDERS_PREFERENCE{$a} <=> $FOLDERS_PREFERENCE{$b} } @folders;
-    return $sorted_by_preference[0];
+    my @all_folders_have_different_preference = scalar(@folders) - scalar( uniq( @FOLDERS_PREFERENCE{@folders}));
+    if ( @all_folders_have_different_preference )
+    {
+      my @sorted_by_preference = sort { $FOLDERS_PREFERENCE{$a} <=> $FOLDERS_PREFERENCE{$b} } @folders;
+      return $sorted_by_preference[0];
+    }
   }
   my ( $folder1, $folder2 ) = @folders;
   if ( exists $IS_BETTER_THAN{$folder1}{$folder2} )
