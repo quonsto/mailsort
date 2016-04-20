@@ -10,6 +10,7 @@ diff -uw \
     -I '^x-spampal: ' \
     -I '^x-spam-flag: ' \
     -I '^x-mimeole: ' \
+    -I '^x-loop: ' \
     -I '^Return-Path: ' \
     -I '^.*----=_NextPart_' \
     -I '^x-felis-deliver-id: ' \
@@ -18,6 +19,7 @@ diff -uw \
     -I '^[Xx]-[Ss]pam-[Ss]tatus: ' \
     -I '^[Xx]-[Ss]pam-[Rr]eport: ' \
     -I '^x-recipient: ' \
+    -I '^Disposition-Notification-To: ' \
     -I '^x-spamcheck: ' \
     -I '^[Xx]-[Ss]pam-[Ll]evel: ' \
     -I '^List-Help: ' \
@@ -26,6 +28,8 @@ diff -uw \
     -I '^x-original-to: ' \
     -I '^Thread-Index: ' \
     -I '^x-rav-antivirus: ' \
+    -I '^x-antivirus: ' \
+    -I '^x-antivirus-status: ' \
     -I '^x-antivirus-wms: ' \
     -I '^x-antivirus-wms-mail-from: ' \
     -I '^x-antivirus-wms-moved-x-spam-status: ' \
