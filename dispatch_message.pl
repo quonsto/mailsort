@@ -323,6 +323,7 @@ use vars qw/@ESTIMATING_SUBSTITUTIONS/; BEGIN { @ESTIMATING_SUBSTITUTIONS = (
 
   [ '^Входящие', 'Inbox' ],
   [ '^Personal Stuff/', 'Personal/People/' ],
+  [ '^Personal Stuff/', 'Personal/Information/' ],
   [ '^', 'Professional/Work/Archive/Telecom-Centre/' ],
   [ '^Projects/', 'Professional/Work/Archive/Telecom-Centre/Development/' ],
   [ '^Personal Stuff/', 'Personal/' ],
