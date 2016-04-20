@@ -6,27 +6,33 @@ diff -uw \
     -I '^x-bayesian-words: ' \
     -I '^x-bayesian-result: ' \
     -I '^Keywords: ' \
+    -I '^X-Mailer: ' \
     -I '^x-spampal: ' \
+    -I '^x-spam-flag: ' \
     -I '^x-mimeole: ' \
     -I '^Return-Path: ' \
     -I '^.*----=_NextPart_' \
     -I '^x-felis-deliver-id: ' \
     -I '^x-felis-queue-id: ' \
     -I '^x-sender: ' \
-    -I '^x-spam-status: ' \
+    -I '^[Xx]-[Ss]pam-[Ss]tatus: ' \
+    -I '^[Xx]-[Ss]pam-[Rr]eport: ' \
     -I '^x-recipient: ' \
     -I '^x-spamcheck: ' \
-    -I '^x-spam-level: ' \
+    -I '^[Xx]-[Ss]pam-[Ll]evel: ' \
     -I '^List-Help: ' \
     -I '^List-Subscribe: ' \
     -I '^List-Unsubscribe: ' \
     -I '^x-original-to: ' \
     -I '^Thread-Index: ' \
+    -I '^x-rav-antivirus: ' \
     -I '^x-antivirus-wms: ' \
     -I '^x-antivirus-wms-mail-from: ' \
+    -I '^x-antivirus-wms-moved-x-spam-status: ' \
     -I '^[Xx]-[Vv]irus-[Ss]canned: ' \
     -I '^x-virus-status: ' \
     -I '^x-cron-env: ' \
+    -I '^x-server: ' \
     -I '^x-authentication-warning: ' \
     -I '^x-scanned-by: ' \
     -I '^x-mime-autoconverted: ' \
@@ -39,11 +45,17 @@ diff -uw \
     -I '^x-spampal-timeout: ' \
     -I '^x-dspam-confidence: ' \
     -I '^x-dspam-signature: ' \
+    -I '^x-dspam-probability: ' \
+    -I '^x-dspam-processed: ' \
+    -I '^x-dspam-result: ' \
+    -I '^x-spamtest-version: ' \
+    -I '^[Xx]-[Ss]pam-[Cc]hecker-[Vv]ersion: ' \
     -I '^x-source-ip: ' \
     -I '^x-originating-ip: ' \
     -I '^Importance: ' \
     -I '^X-Priority: ' \
     -I '^X-MSMail-Priority: ' \
     -I '^X-MS-TNEF-Correlator: ' \
+    -I '^x-ms-has-attach: ' \
     -I '^eJ8+I...AQaQCAAEAAAAAAABAAEAAQeQBgAIAAAA4wQAAAAAAADnAAEIgAcA..AAAElQTS5.....' \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
