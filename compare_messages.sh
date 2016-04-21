@@ -7,6 +7,8 @@ diff -uw \
     -I '^x-bayesian-result: ' \
     -I '^Keywords: ' \
     -I '^X-Mailer: ' \
+    -I '^x-tff-cgpsa-filter: ' \
+    -I '^x-tff-cgpsa-version: ' \
     -I '^x-spampal: ' \
     -I '^x-spam-flag: ' \
     -I '^x-mimeole: ' \
@@ -26,6 +28,7 @@ diff -uw \
     -I '^List-Subscribe: ' \
     -I '^List-Unsubscribe: ' \
     -I '^x-original-to: ' \
+    -I '^x-envelope-to: ' \
     -I '^Thread-Index: ' \
     -I '^x-rav-antivirus: ' \
     -I '^x-antivirus: ' \
@@ -56,6 +59,7 @@ diff -uw \
     -I '^[Xx]-[Ss]pam-[Cc]hecker-[Vv]ersion: ' \
     -I '^x-source-ip: ' \
     -I '^x-originating-ip: ' \
+    -I '^x-proxy-ip: ' \
     -I '^Importance: ' \
     -I '^X-Priority: ' \
     -I '^X-MSMail-Priority: ' \
