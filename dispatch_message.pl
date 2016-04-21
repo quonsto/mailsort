@@ -54,7 +54,7 @@ sub choose_best_message_file( $ $ )
   return $wo_microsoft[0] if @wo_microsoft == 1;
   my $notthesame = system "compare_messages.sh", @filenames;
   die "diff failed: $!" if $notthesame == -1;
-  die join( join( " and ", @filenames), "files", "differ") if $notthesame;
+  die join( join( "\nand\n", @filenames), "files\n", "\ndiffer") if $notthesame;
   my $chosen = eval {
     my $chosen = stdout_of( "choose_best_message.sh", $filenames[0], $filenames[1]);
     die "Empty output from choose_best_message.sh '$filenames[0]' '$filenames[1]'" unless $chosen;
