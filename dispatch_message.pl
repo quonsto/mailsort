@@ -276,10 +276,6 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   "Professional/Information/Network Tech/IP Technologies" => {
     "Personal Stuff/CityCat" => 1
   },
-  "Professional/Work/Archive/Telecom-Centre/Maintenance/САСП/Распоряжения и заявки" => {
-    "Professional/Work/Archive/Telecom-Centre/Распоряжения" => 1,
-    "Распоряжения" => 1,
-  },
 );
 
 }
