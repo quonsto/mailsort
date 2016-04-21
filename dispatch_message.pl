@@ -328,6 +328,7 @@ sub is_a_deleted_items_folder( $ )
 {
   return 1 if $_[0] eq 'Удаленные';
   return 1 if $_[0] eq 'Deleted Items';
+  return 1 if $_[0] eq 'Deleted Items/! Deleted Items до разделения папок';
   return 0;
 }
 
@@ -335,6 +336,7 @@ sub is_an_inbox_folder( $ )
 {
   return 1 if $_[0] eq 'Inbox';
   return 1 if $_[0] eq 'Входящие';
+  return 1 if $_[0] eq 'Входящие/Sort';
   return 0;
 }
 
