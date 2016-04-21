@@ -7,6 +7,11 @@ decode_message.pl "$1" |
        s/^Subject: :\[SPAM\]:/Subject: /g
    ' | 
    perl -ne '
+       if ( $body_mode ) { print; next }; 
+       if ( /^$/ ) { $body_mode = 1; print sort @headers; @headers = 0 }
+       push @headers, $_;
+   ' |
+   perl -ne '
        /boundary="(.*)"/ and $boundary = $1;
        $boundary and /^--$boundary--$/ and $tnef_mode = 0;
        print unless $tnef_mode;
