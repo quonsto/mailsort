@@ -321,11 +321,25 @@ sub substitute( $ $ $ )
   return $string;
 }
 
+sub is_a_deleted_items_folder( $ )
+{
+  return 1 if $_[0] eq 'Удаленные';
+  return 1 if $_[0] eq 'Deleted Items';
+  return 0;
+}
+
+sub is_an_inbox_folder( $ )
+{
+  return 1 if $_[0] eq 'Inbox';
+  return 1 if $_[0] eq 'Входящие';
+  return 0;
+}
+
 sub generate_folder( $ $ )
 {
   my ( $folder1, $folder2 ) = @_;
-  return "" unless grep { $_ eq 'Удаленные' or $_ eq 'Deleted Items' } @_;
-  return "" unless grep { $_ eq 'Inbox' or $_ eq 'Входящие' } @_;
+  return "" unless grep { is_a_deleted_items_folder( $_) } @_;
+  return "" unless grep { is_an_inbox_folder( $_) } @_;
   return "Either Inbox or Deleted";
 }
 
