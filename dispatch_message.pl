@@ -285,6 +285,8 @@ sub choose_best_folder
 {
   my @folders = @_;
 #  print sprintf "%s\n", join ', ', map "'$_'", @folders;
+  my $generated = generate_folder( $folders[0], $folders[1]);
+  return $generated if $generated;
   foreach my $chooser ( @CHOOSERS ) {
     my @filtered = grep &$chooser, @folders;
     return $filtered[0] if @filtered == 1;
@@ -317,6 +319,14 @@ sub substitute( $ $ $ )
   my ( $find, $substitute, $string ) = @_;
   $string =~ s/$find/$substitute/g;
   return $string;
+}
+
+sub generate_folder( $ $ )
+{
+  my ( $folder1, $folder2 ) = @_;
+  return "" unless grep { $_ eq 'Удаленные' or $_ eq 'Deleted Items' } @_;
+  return "" unless grep { $_ eq 'Inbox' or $_ eq 'Входящие' } @_;
+  return "Either Inbox or Deleted";
 }
 
 use vars qw/@ESTIMATING_SUBSTITUTIONS/; BEGIN { @ESTIMATING_SUBSTITUTIONS = (
