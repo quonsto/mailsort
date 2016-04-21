@@ -209,7 +209,9 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
 %IS_BETTER_THAN = (
   "Professional/Work/Archive/Telecom-Centre/Maintenance/САСП/Распоряжения и заявки" => {
     "Переписка с клиентами" => 1,
-    "Распоряжения" => 1
+    "Распоряжения" => 1,
+    "Распоряжения/Unchecked" => 1,
+    "Professional/Work/Archive/Telecom-Centre/Распоряжения" => 1,
   },
   "Professional/Work/Archive/Telecom-Centre/Significant &- Important" => {
     "Significant &- Important" => 1
@@ -220,6 +222,10 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   },
   "Personal/People/Baranovsky" => {
     "Personal Stuff/Baranovsky" => 1
+  },
+  "Personal/People" => {
+    "Personal/Personal" => 1,
+    "Personal Stuff" => 1,
   },
   "Professional/Work/Archive/Telecom-Centre/Development/KIS" => {
     "Projects/KIS" => 1
@@ -275,6 +281,12 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   },
   "Professional/Information/Network Tech/IP Technologies" => {
     "Personal Stuff/CityCat" => 1
+  },
+  "Inbox/SpamInvest" => {
+    "Входящие/SpamFight" => 1,
+  },
+  "Inbox/PD" => {
+    "Входящие/PacketDelivery" => 1,
   },
 );
 
