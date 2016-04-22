@@ -8,7 +8,7 @@ decode_message.pl "$1" |
    ' | 
    perl -ne '
        if ( $body_mode ) { print; next }; 
-       if ( /^$/ ) { $body_mode = 1; print sort @headers; @headers = 0 }
+       if ( /^$/ ) { $body_mode = 1; print sort @headers; @headers = 0; print }
        push @headers, $_;
    ' |
    perl -ne '
