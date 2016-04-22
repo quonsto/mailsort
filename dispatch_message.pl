@@ -282,13 +282,41 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
     "Входящие/SPF/Unfiltered-3" => 1
   },
   "Professional/Information/Network Tech/IP Technologies" => {
-    "Personal Stuff/CityCat" => 1
+    "Personal Stuff/CityCat" => 1,
+    "Personal Stuff/InformatioPersonal Stuff/Information" => 1,
   },
   "Inbox/SpamInvest" => {
     "Входящие/SpamFight" => 1,
   },
   "Inbox/PD" => {
     "Входящие/PacketDelivery" => 1,
+  },
+  "Personal/People/Иришка" => {
+    "Personal/People/Ira Moiseenko" => 1,
+  },
+  "Queue/9 Hold before deletion" => {
+    "Deleted Items/! Deleted Items до разделения папок" => 1,
+  },
+  "Входящие/Цифры" => {
+    "Professional/Work/Организационные вопросы" => 1,
+  },
+  "Personal/Information/Useful Links" => {
+    "Personal Stuff" => 1,
+  },
+  "Professional/People" => {
+    "Professional/Work/People" => 1,
+  },
+  "Professional/Information/Admin/AdminNT" => {
+    "Personal Stuff/CityCat" => 1,
+  },
+  "Personal/Information/Useful Links" => {
+    "Personal Stuff/Information" => 1,
+  },
+  "Professional/Information/Development" => {
+    "Personal Stuff/CityCat" => 1,
+  },
+  "Professional/Work/Archive/Telecom-Centre/Development/Netflow 2" => {
+    "My Projects/Netflow 2" => 1,
   },
 );
 
