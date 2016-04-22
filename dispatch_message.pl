@@ -183,6 +183,8 @@ use vars qw/%FOLDERS_PREFERENCE/; BEGIN {
   "Personal/History" => 500,
   "Personal/People/History" => 500,
   "Personal/Hobby/Racing" => 500,
+  "Personal/Hobby/F1" => 500,
+  "Personal/Personal/Mobile" => 500,
   "Queue/2 Tasks" => 500,
   "Queue" => 500,
   "Inbox/Unimportant" => 750,
