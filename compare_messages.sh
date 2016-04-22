@@ -5,6 +5,7 @@ diff -uw \
     -I '^x-originalarrivaltime: ' \
     -I '^x-bayesian-words: ' \
     -I '^x-bayesian-result: ' \
+    -I '^x-uid: ' \
     -I '^Keywords: ' \
     -I '^X-Mailer: ' \
     -I '^x-tff-cgpsa-filter: ' \
@@ -36,6 +37,9 @@ diff -uw \
     -I '^x-antivirus-wms: ' \
     -I '^x-antivirus-wms-mail-from: ' \
     -I '^x-antivirus-wms-moved-x-spam-status: ' \
+    -I '^x-antivirus-wms-moved-x-spam-level: ' \
+    -I '^x-antivirus-wms-moved-x-spam-report: ' \
+    -I '^x-antivirus-wms-moved-x-spam-flag: ' \
     -I '^[Xx]-[Vv]irus-[Ss]canned: ' \
     -I '^x-virus-status: ' \
     -I '^x-cron-env: ' \
@@ -56,6 +60,8 @@ diff -uw \
     -I '^x-dspam-processed: ' \
     -I '^x-dspam-result: ' \
     -I '^x-spamtest-version: ' \
+    -I '^x-spamtest-info: ' \
+    -I '^x-spamtest-status: ' \
     -I '^[Xx]-[Ss]pam-[Cc]hecker-[Vv]ersion: ' \
     -I '^x-source-ip: ' \
     -I '^x-originating-ip: ' \
