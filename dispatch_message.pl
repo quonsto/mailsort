@@ -54,6 +54,7 @@ sub choose_best_message_file( $ $ )
   return $wo_microsoft[0] if @wo_microsoft == 1;
   my @compare_arguments = @filenames;
   push @compare_arguments, 'spam_mode' unless grep { $_ !~ /Спам/ } grep { $_ !~ /Spam/ } @filenames;
+  push @compare_arguments, 'spam_mode' unless grep { $_ !~ /Удаленные/ } grep { $_ !~ /Deleted Items/ } @filenames;
   my $notthesame = system "compare_messages.sh", @compare_arguments;
   die "diff failed: $!" if $notthesame == -1;
   die join( join( "\nand\n", @filenames), "files\n", "\ndiffer") if $notthesame;
