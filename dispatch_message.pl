@@ -52,7 +52,9 @@ sub choose_best_message_file( $ $ )
   my @filenames = @_;
   my @wo_microsoft = grep { not_a_microsoft( $_) } @filenames;
   return $wo_microsoft[0] if @wo_microsoft == 1;
-  my $notthesame = system "compare_messages.sh", @filenames;
+  my @compare_arguments = @filenames;
+  push @compare_arguments, 'spam_mode' unless grep { $_ !~ /Spam/ } @filenames;
+  my $notthesame = system "compare_messages.sh", @compare_arguments;
   die "diff failed: $!" if $notthesame == -1;
   die join( join( "\nand\n", @filenames), "files\n", "\ndiffer") if $notthesame;
   my $chosen = eval {

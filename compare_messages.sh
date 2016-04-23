@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+EXTRA_IGNORE='^x-originalarrivaltime: '
+EXTRA_IGNORE2='^x-originalarrivaltime: '
+EXTRA_IGNORE3='^x-originalarrivaltime: '
+if [ x"$3" == "xspam_mode" ]; then
+    EXTRA_IGNORE='^Content-Type: text/plain;charset='
+    EXTRA_IGNORE2='^	charset="'
+    EXTRA_IGNORE3='^Date: '
+fi
+
 diff -uw \
     -I '^X-OlkEid: ' \
     -I '^x-originalarrivaltime: ' \
@@ -72,4 +81,7 @@ diff -uw \
     -I '^X-MS-TNEF-Correlator: ' \
     -I '^x-ms-has-attach: ' \
     -I '^eJ8+I...AQaQCAAEAAAAAAABAAEAAQeQBgAIAAAA4wQAAAAAAADnAAEIgAcA..AAAElQTS5.....' \
+    -I "$EXTRA_IGNORE" \
+    -I "$EXTRA_IGNORE2" \
+    -I "$EXTRA_IGNORE3" \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
