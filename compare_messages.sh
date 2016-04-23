@@ -15,6 +15,7 @@ fi
 
 diff -uw \
     -I '^X-OlkEid: ' \
+    -I '^Bcc: ' \
     -I '^x-originalarrivaltime: ' \
     -I '^x-bayesian-words: ' \
     -I '^x-bayesian-result: ' \
