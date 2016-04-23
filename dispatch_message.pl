@@ -318,12 +318,37 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   },
   "Personal/Information/Useful Links" => {
     "Personal Stuff/Information" => 1,
+    "Personal Stuff" => 1,
   },
   "Professional/Information/Development" => {
     "Personal Stuff/CityCat" => 1,
   },
   "Professional/Work/Archive/Telecom-Centre/Development/Netflow 2" => {
     "My Projects/Netflow 2" => 1,
+  },
+  "Queue/9 Hold before deletion/Horoscopes" => {
+    "Personal Stuff/CityCat" => 1,
+  },
+  "Personal/Information/Technology/Internet" => {
+    "Personal Stuff/CityCat" => 1,
+  },
+  "Personal/People/Мама" => {
+    "Мама" => 1,
+  },
+  "Inbox/Important" => {
+    "Входящие/Sort Old" => 1,
+  },
+  "Professional/Information/Admin/AdminUnix" => {
+    "Personal Stuff" => 1,
+  },
+  "Входящие/SPF/WillReject/Not Spam" => {
+    "Inbox/Не спам" => 1,
+  },
+  'Old Info/F~$&-ing hackers and providers' => {
+    'F~$&-ing hackers and providers' => 1,
+  },
+  'Professional/Work/Archive/Telecom-Centre/Development/BIZRTK1' => {
+    'Projects/BIZRTK' => 1,
   },
 );
 
