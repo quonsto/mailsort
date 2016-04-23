@@ -363,6 +363,15 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   'Personal/Hobby/Martial' => {
     'Personal/Hobby/Sport' => 1,
   },
+  'Professional/Work/Archive/Telecom-Centre/Maintenance/Our Clients/RIA Novosti' => {
+    'Our Clients/RIA Novosti' => 1,
+  },
+  'Входящие/Почтовые проблемы' => {
+    'Inbox/Почта' => 1,
+  },
+  'Входящие/Жалобы от Naumen Service Desk' => {
+    'Inbox/Naumen' => 1,
+  },
 );
 
 }
