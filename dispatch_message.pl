@@ -351,6 +351,15 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   'Professional/Work/Archive/Telecom-Centre/Development/BIZRTK1' => {
     'Projects/BIZRTK' => 1,
   },
+  'Professional/Information/Development/PostgreSQL' => {
+    'Professional/Work/Archive/Telecom-Centre/History' => 1,
+  },
+  'Personal/Information/Sciences' => {
+    'Personal Stuff' => 1,
+  },
+  'Personal/Hobby/Martial' => {
+    'Personal/Hobby/Sport' => 1,
+  },
 );
 
 }
