@@ -182,6 +182,7 @@ use vars qw/%FOLDERS_PREFERENCE/; BEGIN {
   "Personal Stuff/CityCat" => 500,
   "Personal/Information/Sciences/Computer Sciences" => 500,
   "Personal/Information/Laws/Army" => 500,
+  "Personal/Information/Wealth/Estate" => 500,
   "Personal/Hobby/Money/Forex" => 600,
   "Personal/Fun" => 500,
   "Personal/History" => 500,
