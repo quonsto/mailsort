@@ -375,6 +375,12 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   'Входящие/Жалобы от Naumen Service Desk' => {
     'Inbox/Naumen' => 1,
   },
+  'Inbox/Питер' => {
+    'Входящие/Personal' => 1,
+  },
+  'Professional/Information/Security' => {
+    'Personal Stuff/CityCat' => 1,
+  },
 );
 
 }
