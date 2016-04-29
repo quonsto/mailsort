@@ -474,12 +474,26 @@ sub choose_by_complex( $ $ )
   return 0;
 }
 
+sub list_contains_list( \@\@ )
+{
+  my ( $list1, $list2 ) = @_;
+  my %hash1 = map { $_ => 1 } @$list1;
+  return 0 if grep { not exists $hash1{$_} } @$list2;
+  return 1;
+} 
+
 sub choose_by_substringing( $ $ )
 {
   my ( $folder1, $folder2 ) = @_;
   if ( substr( $folder1, 0, length( $folder2)) eq $folder2 )
   { return $folder1 }
   if ( substr( $folder2, 0, length( $folder1)) eq $folder1 )
+  { return $folder2 }
+  my @path_elems_1 = split( '/', $folder1);
+  my @path_elems_2 = split( '/', $folder2);
+  if ( list_contains_list( @path_elems_1, @path_elems_2) )
+  { return $folder1 }
+  if ( list_contains_list( @path_elems_2, @path_elems_1) )
   { return $folder2 }
   return "";
 }
