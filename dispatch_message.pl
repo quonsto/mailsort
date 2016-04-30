@@ -282,6 +282,9 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   "Personal/People/Sanych" => {
     "Personal/People/Саныч" => 1
   },
+  "Personal/People/Саныч" => {
+    "Personal/Archive" => 1
+  },
   "Personal/Personal/Accounts" => {
     "Inbox/Spam/Old" => 1,
     "Входящие/Personal" => 1,
@@ -353,6 +356,7 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   },
   "Professional/Information/Admin/AdminUnix" => {
     "Personal Stuff" => 1,
+    "Personal Stuff/Information" => 1,
   },
   "Входящие/SPF/WillReject/Not Spam" => {
     "Inbox/Не спам" => 1,
