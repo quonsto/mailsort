@@ -72,6 +72,7 @@ diff -uw \
     -I '^x-sku-spf-passed: ' \
     -I '^x-mdaemon-deliver-to: ' \
     -I '^x-wlist-pattern: ' \
+    -I '^x-blist-pattern: ' \
     -I '^Content-Language: ' \
     -I '^x-spampal-timeout: ' \
     -I '^x-dspam-confidence: ' \
