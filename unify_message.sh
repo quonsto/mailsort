@@ -2,7 +2,7 @@
 
 decode_message.pl "$1" |
    perl -pe '
-       s/^Subject: \*\*SPAM\*\*/Subject: /g;
+       s/^Subject: (RE: )?\*\*SPAM\*\*/Subject: \1/g;
        s/^Subject: :SPAM:/Subject: /g;
        s/^Subject: :\[SPAM\]:/Subject: /g
    ' | 
