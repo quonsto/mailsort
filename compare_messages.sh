@@ -6,6 +6,7 @@ EXTRA_IGNORE3='^x-originalarrivaltime: '
 EXTRA_IGNORE4='^x-originalarrivaltime: '
 EXTRA_IGNORE5='^x-originalarrivaltime: '
 EXTRA_IGNORE6='^x-originalarrivaltime: '
+EXTRA_IGNORE7='^x-originalarrivaltime: '
 if [ x"$3" == "xspam_mode" ]; then
     EXTRA_IGNORE='^Content-Type: text/plain;charset='
     EXTRA_IGNORE2='^	charset="'
@@ -13,6 +14,7 @@ if [ x"$3" == "xspam_mode" ]; then
     EXTRA_IGNORE4='^From: '
     EXTRA_IGNORE5='^Return-Path: '
     EXTRA_IGNORE6='^To: '
+    EXTRA_IGNORE7='^Reply-To: '
 fi
 
 diff -uw \
@@ -100,4 +102,5 @@ diff -uw \
     -I "$EXTRA_IGNORE4" \
     -I "$EXTRA_IGNORE5" \
     -I "$EXTRA_IGNORE6" \
+    -I "$EXTRA_IGNORE7" \
   <(unify_message.sh "$1") <(unify_message.sh "$2")
