@@ -60,6 +60,7 @@ diff -uw \
     -I '^x-antivirus-wms-moved-x-spam-level: ' \
     -I '^x-antivirus-wms-moved-x-spam-report: ' \
     -I '^x-antivirus-wms-moved-x-spam-flag: ' \
+    -I '^X-Antivirus-WMS-1.25-st-qms: ' \
     -I '^[Xx]-[Vv]irus-[Ss]canned: ' \
     -I '^x-virus-status: ' \
     -I '^x-cron-env: ' \
