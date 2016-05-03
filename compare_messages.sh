@@ -93,7 +93,7 @@ diff -uw \
     -I '^X-MSMail-Priority: ' \
     -I '^X-MS-TNEF-Correlator: ' \
     -I '^x-ms-has-attach: ' \
-    -I '^eJ8+I...AQaQCAAEAAAAAAABAAEAAQeQBgAIAAAA4wQAAAAAAADnAAEIgAcA..AAAElQTS5.....' \
+    -I '^eJ8+I...AQaQCAAEAAAAAAABAAEAAQeQBgAIAAAA4wQAAAAAAADnAAEIgAcA..AAA...........' \
     -I "$EXTRA_IGNORE" \
     -I "$EXTRA_IGNORE2" \
     -I "$EXTRA_IGNORE3" \
