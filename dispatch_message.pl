@@ -249,6 +249,9 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
     "Распоряжения/Unchecked" => 1,
     "Professional/Work/Archive/Telecom-Centre/Распоряжения" => 1,
   },
+  "Professional/Work/Archive/Telecom-Centre/Maintenance/САСП" => {
+    "Распоряжения" => 1,
+  },
   "Professional/Work/Archive/Telecom-Centre/Significant &- Important" => {
     "Significant &- Important" => 1
   },
@@ -258,6 +261,9 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   },
   "Personal/People/Baranovsky" => {
     "Personal Stuff/Baranovsky" => 1
+  },
+  "Personal/People/Андрей" => {
+    "Personal Stuff" => 1,
   },
   "Personal/People" => {
     "Personal/Personal" => 1,
@@ -274,6 +280,9 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   },
   "Queue/1 In work/Tasks/3 Important/Security Updates" => {
     "Queue/1 In work/Tasks/2 Urgent" => 1
+  },
+  "Queue/1 In work/Tasks/2 Urgent" => {
+    "Queue/2 Tasks" => 1
   },
   "Deleted Items/! Deleted Items до разделения папок" => {
     "Удаленные" => 1
@@ -293,6 +302,9 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   "Professional/Work/WMS" => {
     "Входящие/Billing" => 1
   },
+  "Personal/People/Julia Itkis" => {
+    "Personal/People/Utkis" => 1
+  },
   "Personal/People/Sanych" => {
     "Personal/People/Саныч" => 1
   },
@@ -309,6 +321,9 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   "Входящие/Отпуск - старое" => {
     "Входящие/Отпуск" => 1
   },
+  "Входящие/Отпуск - старое/4Home" => {
+    "Входящие/Отпуск/4Home" => 1
+  },
   "Personal/Hobby/Racing" => {
     "Personal/Hobby/F1" => 1
   },
@@ -316,7 +331,8 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
     "Personal Stuff" => 1
   },
   "Inbox/Спам! (Помечено SPF-ом)/Не пометилось" => {
-    "Входящие/SPF/Unfiltered-3" => 1
+    "Входящие/SPF/Unfiltered-3" => 1,
+    "Входящие/SPF/Unfiltered-2" => 1,
   },
   "Professional/Information/Network Tech/IP Technologies" => {
     "Personal Stuff/CityCat" => 1,
@@ -330,6 +346,7 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   },
   "Personal/People/Иришка" => {
     "Personal/People/Ira Moiseenko" => 1,
+    "Personal/ЖЖ" => 1,
   },
   "Queue/9 Hold before deletion" => {
     "Deleted Items/! Deleted Items до разделения папок" => 1,
@@ -352,6 +369,9 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   },
   "Professional/Information/Development" => {
     "Personal Stuff/CityCat" => 1,
+  },
+  "Projects/Netflow 2" => {
+    "My Projects/Netflow 2" => 1,
   },
   "Professional/Work/Archive/Telecom-Centre/Development/Netflow 2" => {
     "My Projects/Netflow 2" => 1,
@@ -402,8 +422,20 @@ use vars qw/%IS_BETTER_THAN/; BEGIN {
   'Inbox/Питер' => {
     'Входящие/Personal' => 1,
   },
+  'Personal/Information/Это интересно' => {
+    'Personal Stuff/CityCat' => 1,
+  },
   'Professional/Information/Security' => {
     'Personal Stuff/CityCat' => 1,
+    'Personal Stuff/Information' => 1,
+  },
+  'Входящие/L8r' => {
+    'Inbox/! Inbox до разделения папок' => 1,
+  },
+  'Personal/Information/Entertainment/Music' => {
+    'Personal Stuff' => 1,
+    'Personal Stuff/CityCat' => 1,
+    'Personal Stuff/Information' => 1,
   },
 );
 
